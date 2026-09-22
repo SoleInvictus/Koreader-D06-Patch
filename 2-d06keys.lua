@@ -1,6 +1,23 @@
 -- 2-d06keys.lua  (KOReader user patch)
--- Starts d06keys.lua in the background when KOReader launches,
--- and stops it when KOReader exits, so Nickel never sees it.
+-- Copyright (C) 2026 SoleInvictus
+--
+-- This program is free software: you can redistribute it and/or modify
+-- it under the terms of the GNU General Public License as published by
+-- the Free Software Foundation, either version 3 of the License, or
+-- (at your option) any later version.
+--
+-- This program is distributed in the hope that it will be useful,
+-- but WITHOUT ANY WARRANTY; without even the implied warranty of
+-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-- GNU General Public License for more details.
+--
+-- You should have received a copy of the GNU General Public License
+-- along with this program.  If not, see <https://www.gnu.org/licenses/>.
+--
+-- Starts d06keys.lua in the background a few seconds after KOReader has
+-- finished starting, and stops it when KOReader exits.
+-- Everything is wrapped in pcall so a problem here can't stop KOReader
+-- from launching; errors go to KOReader's crash.log instead.
 --
 -- Put this file in:  /mnt/onboard/.adds/koreader/patches/
 -- Keep d06keys.lua in: /mnt/onboard/.adds/koreader/
