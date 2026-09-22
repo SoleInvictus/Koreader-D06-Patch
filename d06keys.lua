@@ -31,16 +31,14 @@ local bit = require("bit")
 local C = ffi.C
 
 ------------------------------------------------------------------------
--- Settings: edit these to taste
+-- Settings
 ------------------------------------------------------------------------
 local RING_NAME = "D06"   -- HID name of the ring (from evtest / uevent)
-local VERBOSE   = true    -- print each detected press
+local VERBOSE   = true    -- print/log each detected press
 
 -- Linux key codes sent for each swipe direction. Use four different codes
--- to bind four different actions. The ring must declare the key (the D06's
--- evtest header lists which it supports); these all qualify.
--- 103 Up, 108 Down, 105 Left, 106 Right, 104 PageUp, 109 PageDown,
--- 114 VolumeDown, 115 VolumeUp
+-- to bind four different actions. The ring must declare the key - the D06's
+-- evtest header lists which it supports.
 local KEYS = {
   up    = 103,  -- swipe up    -> Up arrow
   left  = 105,  -- swipe left  -> Left arrow
